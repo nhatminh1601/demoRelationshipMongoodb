@@ -28,7 +28,7 @@ module.exports.getAll = getAll;
 const update = (req, res, next) => {
     User.findByIdAndUpdate(req.params.id, req.body, (err, users) => {
         if (err) return next(err);
-        res.json(users);
+        return res.json(users);
     })
 };
 module.exports.update = update;
